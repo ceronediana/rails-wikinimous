@@ -1,11 +1,13 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.content %></p>
+<div class="container mt-4">
+  <h1><%= @article.title %></h1>
+  <p><%= @article.content %></p>
 
-<p><%= link_to "✏️ Edit this Article", edit_article_path(@article) %></p>
+  <p><%= link_to "✏️ Edit this Article", edit_article_path(@article), class:"btn btn-primary" %></p>
 
-<%= link_to "Delete",
-  article_path(@article),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+  <p><%= link_to "🔙 Back to list", articles_path, class: "btn btn-outline-secondary" %></p>
 
-<p><%= link_to "🔙 Back to list", articles_path %></p>
+  <%= link_to "Delete",
+    article_path(@article), class:"btn btn-danger",
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</div>

@@ -1,5 +1,9 @@
-<% @articles.each do |article| %>
-  <%= link_to article.title, article_path(article) %>
-<% end %>
+<div class="container">
+  <h1 class="text-primary">All Articles</h1>
 
-<p><%= link_to "✏️ Add an Article", new_article_path %></p>
+  <% @articles.each do |article| %>
+    <p class="mb-3"><%= link_to article.title, article_path(article), class: "text-decoration-none fs-4" %></p>
+    <p><%= truncate(article.content, length: 100, omission: '... (continued)') %></p>
+    <hr>
+  <% end %>
+</div>

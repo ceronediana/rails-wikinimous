@@ -1,10 +1,5 @@
-<h1>Add an Article</h1>
-<%= form_with model: @article do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
-<% end %>
-
-<p><%= link_to "🔙 Back to list", articles_path %></p>
+<div class="container">
+  <h1>Add an Article</h1>
+  <%= render "form" %>
+  <p><%= link_to "🔙 Back to list", articles_path, class: "btn btn-outline-secondary" %></p>
+</div>
